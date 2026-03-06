@@ -1,3 +1,5 @@
+``` bash
+
 rag-repo/
 ├── README.md
 ├── requirements.txt
@@ -40,3 +42,5 @@ rag-repo/
     ├── architecture.md
     ├── design_decisions.md
     └── troubleshooting.md
+
+```
