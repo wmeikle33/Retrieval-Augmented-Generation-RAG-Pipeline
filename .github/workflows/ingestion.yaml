@@ -1,27 +1,30 @@
 name: Run Ingestion Subfolder on Specific Changes
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
       - develop
     paths:
       - 'src/ingestion/**'
+      - '.github/workflows/ingestion.yml'
   pull_request:
     branches:
       - main
       - develop
     paths:
       - 'src/ingestion/**'
+      - '.github/workflows/ingestion.yml'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/ingestion
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run build script in subfolder
         run: |
-          cd src/ingestion
-          # Run your build, test, or deployment commands here
           echo "Changes detected in src/ingestion. Running commands."
-          # e.g., npm install or make build commands
