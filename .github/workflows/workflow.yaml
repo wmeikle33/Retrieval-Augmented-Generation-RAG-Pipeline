@@ -1,4 +1,4 @@
-name: Run Ingestion on Specific Subfolder Changes
+name: Run Ingestion Subfolder on Specific Changes
 
 on:
   push:
