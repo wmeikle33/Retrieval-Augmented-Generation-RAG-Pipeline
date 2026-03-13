@@ -1,1 +1,4 @@
-
+app_name: image-classifier
+version: 1.0
+debug: true
+port: 8080
