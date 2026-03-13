@@ -1,0 +1,27 @@
+name: Run on Specific Subfolder Changes
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/my-subfolder/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/my-subfolder/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run build script in subfolder
+        run: |
+          cd src/my-subfolder
+          # Run your build, test, or deployment commands here
+          echo "Changes detected in src/my-subfolder. Running commands."
+          # e.g., npm install or make build commands
