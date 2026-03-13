@@ -23,5 +23,5 @@ jobs:
         run: |
           cd src/ingestion
           # Run your build, test, or deployment commands here
-          echo "Changes detected in src/my-subfolder. Running commands."
+          echo "Changes detected in src/ingestion. Running commands."
           # e.g., npm install or make build commands
