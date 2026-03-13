@@ -5,6 +5,7 @@ import logging
 from src.ingestion.schema import Document
 from src.ingestion.directory_loader import load_directory
 from src.ingestion.web_loader import load_urls
+from src.ingestion.document_loader import TextFolderLoader
 from src.ingestion.metadata_extractor import enrich_metadata
 from src.ingestion.deduplicator import deduplicate_documents
 
