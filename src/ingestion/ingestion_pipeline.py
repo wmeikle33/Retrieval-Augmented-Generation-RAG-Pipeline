@@ -11,7 +11,6 @@ from src.ingestion.deduplicator import deduplicate_documents
 
 logger = logging.getLogger(__name__)
 
-
 class IngestionPipeline:
     def __init__(
         self,
