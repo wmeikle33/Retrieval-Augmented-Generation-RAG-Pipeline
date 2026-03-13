@@ -6,7 +6,7 @@ on:
       - main
       - develop
     paths:
-      - 'src/my-subfolder/**'
+      - 'src/ingestion/**'
   pull_request:
     branches:
       - main
