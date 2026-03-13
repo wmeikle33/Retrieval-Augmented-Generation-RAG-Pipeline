@@ -1,4 +1,5 @@
-from src.embeddings import Embedder
+from src.hf_embedder import HFEmbedder
+from src.open_embedder import HFEmbedder
 
 def embed_chunks(chunks, embedder):
     texts = [chunk["content"] for chunk in chunks]
