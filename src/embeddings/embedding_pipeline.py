@@ -1,5 +1,4 @@
-from src.hf_embedder import HFEmbedder
-from src.open_embedder import OpenAIEmbedder
+from .base import get_embedder
 
 def embed_chunks(chunks, embedder):
     texts = [chunk["content"] for chunk in chunks]
