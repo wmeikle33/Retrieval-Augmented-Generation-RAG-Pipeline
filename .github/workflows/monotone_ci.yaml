@@ -1,0 +1,59 @@
+name: Monotone CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/ingestion/**'
+      - '.github/workflows/monotone_ci.yaml'
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/ingestion/**'
+      - '.github/workflows/monotone_ci.yaml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/ingestion
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run build script in subfolder
+        run: |
+          echo "Changes detected in src/ingestion. Running commands."
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/parsing/**'
+      - '.github/workflows/monotone_ci.yaml'
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/ingestion/**'
+      - '.github/workflows/monotone_ci.yaml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/parsing
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run build script in subfolder
+        run: |
+          echo "Changes detected in src/parsing. Running commands."
