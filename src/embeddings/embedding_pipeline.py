@@ -1,3 +1,5 @@
+from src.embeddings import Embedder
+
 def embed_chunks(chunks, embedder):
     texts = [chunk["content"] for chunk in chunks]
 
