@@ -1,4 +1,4 @@
-from .base import get_embedder
+from .factory import get_embedder
 
 def embed_chunks(chunks, embedder):
     texts = [chunk["content"] for chunk in chunks]
