@@ -1,4 +1,4 @@
-## src/chunking
+## Chunking
 
 Purpose:
 Loads preprocessed documents and parses them
