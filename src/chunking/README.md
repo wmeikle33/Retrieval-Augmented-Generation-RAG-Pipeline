@@ -10,12 +10,9 @@ Outputs:
 - Chunk objects
 
 Key files:
-- docx_parser.py
-- html_parser.py
-- markdown_cleaner.py
-- pdf_parser.py
-- text_normalizer.py
-
+- chunking.py
+- chunker_pipeline.py
+  
 Depends on:
 - src/utils/
 
