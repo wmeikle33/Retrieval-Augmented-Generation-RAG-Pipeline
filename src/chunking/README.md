@@ -1,13 +1,13 @@
 ## Chunking
 
 Purpose:
-Loads preprocessed documents and parses them
+Loads parsed documents and chunks them
 
 Inputs:
-- Already preprocessed documents
+- Already passed documents
 
 Outputs:
-- Document objects
+- Chunk objects
 
 Key files:
 - docx_parser.py
