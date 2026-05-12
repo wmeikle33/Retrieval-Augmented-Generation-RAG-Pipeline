@@ -1,3 +1,5 @@
+from vector_retriver import vector_retriever
+
 class HybridRetriever:
     def __init__(self, vector_retriever, keyword_retriever):
         self.vector_retriever = vector_retriever
