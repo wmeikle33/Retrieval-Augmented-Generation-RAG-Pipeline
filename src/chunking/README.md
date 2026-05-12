@@ -14,9 +14,8 @@ Key files:
 - chunker_pipeline.py
   
 Depends on:
-- src/utils/
+- src/parser/
 
 Does not include:
-- chunk splitting
 - embeddings
 - retrieval
