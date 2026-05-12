@@ -10,11 +10,9 @@ Outputs:
 Document objects
 Key files:
 
-docx_parser.py
-html_parser.py
-markdown_cleaner.py
-pdf_parser.py
-text_normalizer.py
+base.py
+batching.py
+
 Depends on:
 
 src/utils/
