@@ -1,4 +1,4 @@
-from .openai_embedder import OpenAIEmbedder
+from .open_embedder import OpenAIEmbedder
 from .hf_embedder import HFEmbedder
 
 def get_embedder(config):
