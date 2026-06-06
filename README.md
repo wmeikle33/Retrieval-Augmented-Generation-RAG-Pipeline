@@ -65,3 +65,16 @@ rag-repo/
     └── troubleshooting.md
 
 ```
+
+
+## Environment_Setup
+
+Environment setup
+Create a .env file from the example:
+cp .env.example .env
+Then add your API keys:
+OPENAI_API_KEY=your_api_key_here
+VECTOR_DB_PATH=data/processed/vector_index
+CHUNK_SIZE=800
+CHUNK_OVERLAP=100
+TOP_K=5
