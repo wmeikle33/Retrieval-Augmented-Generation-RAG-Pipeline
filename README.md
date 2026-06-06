@@ -66,6 +66,13 @@ rag-repo/
 
 ```
 
+## Installation
+
+```bash
+
+git clone https://github.com/wmeikle33/Retrieval-Augmented-Generation-RAG-Pipeline.git cd Retrieval-Augmented-Generation-RAG-Pipeline python -m venv .venv source .venv/bin/activate # macOS/Linux # .venv\Scripts\activate # Windows pip install -r requirements.txt
+
+```
 
 ## Environment_Setup
 
