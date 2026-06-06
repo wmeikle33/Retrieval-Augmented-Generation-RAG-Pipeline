@@ -93,3 +93,24 @@ CHUNK_OVERLAP=100
 TOP_K=5
 
 ```
+
+## Ingestion 
+
+Place documents in:
+
+```bash
+
+data/sample_docs/
+
+```
+Then run:
+
+```bash
+
+python scripts/ingest.py data/sample_docs
+python scripts/build_index.py
+
+```
+
+
+
