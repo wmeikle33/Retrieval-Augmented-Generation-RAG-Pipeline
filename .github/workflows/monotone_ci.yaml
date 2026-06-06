@@ -1,43 +1,59 @@
 name: CI
 
 on:
-  pull_request:
   push:
-    branches: [main]
+  pull_request:
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      src: ${{ steps.filter.outputs.src }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            src:
-              - 'src/**'
-
   test:
-    needs: changes
-    if: needs.changes.outputs.src == 'true'
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        module:
-          - ingestion
-          - parsing
-          - chunking
-          - embeddings
-          - indexing
-          - retrieval
-          - reranking
-          - generation
+    permissions:
+      # Grant write permissions so the runner can push the fixes back to GitHub
+      contents: write
 
     steps:
-      - uses: actions/checkout@v4
-      - run: pip install -r requirements.txt
-      - run: pytest tests/unit/${{ matrix.module }}
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Crucial for PRs: checks out the actual branch instead of a detached HEAD
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest ruff black
+
+      # 1. Run Ruff with the --fix flag to clean up whitespace and other errors
+      - name: Auto-fix with Ruff
+        run: |
+          ruff check . --fix
+
+      # 2. Run Black to automatically format the code instead of just checking it
+      - name: Auto-format with Black
+        run: |
+          black .
+
+      # 3. Commit and push any automatic changes back to your branch
+      - name: Push automated style fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: auto-fix linting and formatting errors"
+
+      - name: Generate demo data
+        run: |
+          python -m rag_pipeline.generate_demo_data
+          
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run tests
+        run: |
+          pytest
