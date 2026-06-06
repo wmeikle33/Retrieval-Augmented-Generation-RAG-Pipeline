@@ -1,3 +1,24 @@
+## Retrieval-Augmented-Generation-RAG-Pipeline
+
+This is a Python-based Retrieval-Augmented Generation pipeline for ingesting documents, chunking text, creating embeddings, retrieving relevant context, and generating grounded answers with source citations.
+
+## What This Project Does
+
+```bash
+
+1. Load documents from data/raw/ or data/sample_docs/
+2. Parse and clean document text
+3. Split documents into chunks
+4. Generate embeddings
+5. Store chunks in a vector index
+6. Retrieve relevant chunks for a user query
+7. Generate an answer using retrieved context
+8. Return the answer with source references
+
+```
+
+## Repo Structure
+
 ``` bash
 
 rag-repo/
