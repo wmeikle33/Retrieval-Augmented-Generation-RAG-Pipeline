@@ -69,6 +69,8 @@ rag-repo/
 
 ## Environment_Setup
 
+```bash
+
 Environment setup
 Create a .env file from the example:
 cp .env.example .env
@@ -78,3 +80,5 @@ VECTOR_DB_PATH=data/processed/vector_index
 CHUNK_SIZE=800
 CHUNK_OVERLAP=100
 TOP_K=5
+
+```
