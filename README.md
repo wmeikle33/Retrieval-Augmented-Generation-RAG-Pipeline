@@ -112,7 +112,7 @@ python scripts/build_index.py
 
 ```
 
-## Sample_Output
+## Sample Output
 
 Question: What is retrieval-augmented generation? 
 Answer: Retrieval-augmented generation is a technique that improves language model responses by first retrieving relevant external documents, then using those documents as context when generating an answer. 
@@ -120,6 +120,18 @@ Sources:
 ```bash
 1. data/sample_docs/rag_overview.md
 2. data/sample_docs/vector_search_notes.md
+```
+## Known limitations
+
+```bash
+
+Current retrieval may miss relevant context if the query wording differs from the source documents.
+Generated answers depend on the quality of retrieved chunks.
+Large document collections may require a production vector database.
+Evaluation coverage is still limited.
+API-based models may introduce cost and latency.
+The pipeline should not be used for high-stakes decisions without human review.
+
 ```
 
 
