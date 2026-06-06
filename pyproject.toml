@@ -1,1 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "rag-pipeline"
+version = "0.1.0"
+description = "Retrieval-Augmented Generation pipeline with document ingestion, retrieval, and answer generation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+  {name = "William Meikle"}
+]
+
+dependencies = [
+  "openai>=1.0.0",
+  "langchain>=0.3.0",
+  "langchain-community>=0.3.0",
+  "langchain-openai>=0.3.0",
+  "faiss-cpu>=1.8.0",
+  "python-dotenv>=1.0.0",
+  "pydantic>=2.0.0",
+  "pyyaml>=6.0",
+  "tqdm>=4.66.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+rag-ingest = "rag_pipeline.ingestion.cli:main"
+rag-query = "rag_pipeline.api.cli:main"
